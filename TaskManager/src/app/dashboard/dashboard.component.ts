@@ -71,4 +71,31 @@ for(var i= 2019;i>=2010;i--)
     ]}
   ]
 }
+onProjectChange($event:any)
+{
+  if($event.target.innerHTML == "Project A")
+    {
+     this.ProjectCost = 256;
+     this.CurrentExpenditure = 97689;
+     this.AvailableFunds = 53456;
+    }
+    else  if($event.target.innerHTML == "Project B")
+      {
+       this.ProjectCost = 246;
+       this.CurrentExpenditure = 12345;
+       this.AvailableFunds = 676767;
+      }
+      else  if($event.target.innerHTML == "Project C")
+        {
+         this.ProjectCost = 236;
+         this.CurrentExpenditure = 98989;
+         this.AvailableFunds = 88888;
+        }
+        else  if($event.target.innerHTML == "Project D")
+          {
+           this.ProjectCost = 226;
+           this.CurrentExpenditure = 66666;
+           this.AvailableFunds = 77777;
+          }
+}
 }
