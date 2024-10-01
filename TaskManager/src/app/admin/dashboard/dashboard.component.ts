@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,6 +23,9 @@ Years: number[] = [];
 TeamMembersSummary: any = [];
 TeamMembers: any = [];
 ToDay:Date=new Date();
+constructor(private dashboardService:DashboardService){
+
+}
 ngOnInit(): void {
 this.Designation ="Team Leader";
 this.UserName = "John Smith";
@@ -39,12 +43,7 @@ for(var i= 2019;i>=2010;i--)
   {
     this.Years.push(i);
   }
-  this.TeamMembersSummary =[
-    {Region:"East",TeamMembersCount:20,TemporarilyUnavailableMembers:4},
-    {Region:"West",TeamMembersCount:15,TemporarilyUnavailableMembers:8},
-    {Region:"South",TeamMembersCount:17,TemporarilyUnavailableMembers:1},
-    {Region:"North",TeamMembersCount:15,TemporarilyUnavailableMembers:6}
-  ]
+  this.TeamMembersSummary =this.dashboardService.getTeamMembersSummary();
   this.TeamMembers =[
     {Region:"East",Members:[
       {ID:1,Name:"Ford",Status:"Available"},
