@@ -21,17 +21,18 @@ Projects: string[] = [];
 Years: number[] = [];
 TeamMembersSummary: any = [];
 TeamMembers: any = [];
-
+ToDay:Date=new Date();
 ngOnInit(): void {
 this.Designation ="Team Leader";
 this.UserName = "John Smith";
 this.NoOfTeamMembers =67;
 this.TotalCostOfAllProjects = 240;
 this.PendingTasks =15;
-this.UpComingProjects =2;
+this.UpComingProjects =0.2;
 this.ProjectCost = 2113507;
 this.CurrentExpenditure = 96788;
 this.AvailableFunds = 52536;
+this.ToDay = new Date();
 this.Clients=["ABC Infotech Ltd.","DEF Solutions","GHI Industries"];
 this.Projects=["Project A","Project B","Project C","Project D"];
 for(var i= 2019;i>=2010;i--)
