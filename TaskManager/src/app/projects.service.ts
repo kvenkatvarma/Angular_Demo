@@ -9,7 +9,7 @@ export class ProjectsService {
 constructor(private httpClient:HttpClient) { }
 
 getAllProjects():Observable<Project[]>{
-  return this.httpClient.get<Project[]>("api/projects",{responseType:"json"}).pipe(map((data:Project[])=>{
+  return this.httpClient.get<Project[]>("http://localhost:3000/projects",{responseType:"json"}).pipe(map((data:Project[])=>{
     for(let i=0;i<data.length;i++)
       {
         data[i].teamSize =data[i].teamSize * 100;
