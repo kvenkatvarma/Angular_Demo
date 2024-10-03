@@ -16,4 +16,8 @@ insertProject(newProject:Project):Observable<Project>{
   return this.httpClient.post<Project>("api/projects",newProject);
 }
 
+updateProject(existingProject:Project):Observable<Project>{
+  return this.httpClient.put<Project>("api/projects",existingProject);
+}
+
 }
