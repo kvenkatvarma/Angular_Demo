@@ -13,6 +13,8 @@ export class ProjectsComponent implements OnInit {
   deleteProject:Project = new Project();
   deleteIndex:any= null;
   editIndex:number= 0;
+  searchBy:string = "ProjectName";
+  searchText:string="";
 constructor(private projectsService:ProjectsService){}
 ngOnInit(): void {
   this.projectsService.getAllProjects().subscribe(
@@ -85,5 +87,12 @@ this.deleteProject.teamSize = null;
  },(error)=>{
 console.log(error);
  });
+}
+onSearchClick(){
+this.projectsService.SearchProjects(this.searchBy,this.searchText).subscribe((response:Project[])=>{
+  this.projects=response;
+},(error)=>{
+console.log(error);
+});
 }
 }
