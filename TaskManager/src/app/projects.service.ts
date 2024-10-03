@@ -7,7 +7,13 @@ import { Project } from './project';
 })
 export class ProjectsService {
 constructor(private httpClient:HttpClient) { }
+
 getAllProjects():Observable<Project[]>{
   return this.httpClient.get<Project[]>("api/projects");
 }
+
+insertProject(newProject:Project):Observable<Project>{
+  return this.httpClient.post<Project>("api/projects",newProject);
+}
+
 }
