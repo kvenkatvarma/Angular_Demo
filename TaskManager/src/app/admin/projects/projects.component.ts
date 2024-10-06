@@ -20,10 +20,6 @@ ngOnInit(): void {
   this.projectsService.getAllProjects().subscribe(
    (response:Project[])=>{
     this.projects = response;
-   },
-   (error)=>{
-    console.log(error);
-    alert("Aiuthentication Failed");
    }
   );
 }
