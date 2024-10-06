@@ -17,6 +17,7 @@ return this.httpClient.post<any>("/authenticate",loginViewModel,{responseType:"j
 if(user)
   {
     this.currentUserName = user.userName;
+    sessionStorage['currentUser'] = JSON.stringify(user);
   }
   return user;
 }));
@@ -24,6 +25,7 @@ if(user)
 
 public Logout()
 {
+  sessionStorage.removeItem("currentUser");
   this.currentUserName = null;
 }
 }
