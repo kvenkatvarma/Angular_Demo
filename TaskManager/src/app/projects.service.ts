@@ -20,7 +20,9 @@ getAllProjects():Observable<Project[]>{
 }
 
 insertProject(newProject:Project):Observable<Project>{
-  return this.httpClient.post<Project>("api/projects",newProject,{responseType:"json"});
+  var requestHeaders= new HttpHeaders();
+  requestHeaders.set("X-XSRF-TOKEN",sessionStorage["XSRFRequestToken"]);
+  return this.httpClient.post<Project>("api/projects",newProject,{headers:requestHeaders,responseType:"json"});
 }
 
 updateProject(existingProject:Project):Observable<Project>{
