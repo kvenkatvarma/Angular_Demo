@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,10 @@ import { LoginService } from './login.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-constructor(public loginService:LoginService)
+  myProperty:any=null;
+constructor(public loginService:LoginService,private domSanitizer:DomSanitizer)
 {
-
+  this.myProperty =this.domSanitizer.bypassSecurityTrustHtml("<iframe src='http://www.lipsum.com'></iframe>");
 }
+
 }
