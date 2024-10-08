@@ -13,7 +13,7 @@ getAllProjects():Observable<Project[]>{
   return this.httpClient.get<Project[]>("api/projects",{responseType:"json"}).pipe(map((data:Project[])=>{
     for(let i=0;i<data.length;i++)
       {
-        data[i].teamSize =data[i].teamSize * 100;
+       // data[i].teamSize =data[i].teamSize * 100;
       }
     return data;
   }));
@@ -21,8 +21,8 @@ getAllProjects():Observable<Project[]>{
 
 insertProject(newProject:Project):Observable<Project>{
   var requestHeaders= new HttpHeaders();
-  requestHeaders.set("X-XSRF-TOKEN",sessionStorage["XSRFRequestToken"]);
-  return this.httpClient.post<Project>("api/projects",newProject,{headers:requestHeaders,responseType:"json"});
+ // requestHeaders.set("X-XSRF-TOKEN",sessionStorage["XSRFRequestToken"]);
+  return this.httpClient.post<Project>("api/projects",newProject,{responseType:"json"});
 }
 
 updateProject(existingProject:Project):Observable<Project>{

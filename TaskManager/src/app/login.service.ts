@@ -20,7 +20,7 @@ if(response)
   {
     this.currentUserName = response.body.userName;
     sessionStorage['currentUser'] = JSON.stringify(response.body);
-    sessionStorage["XSRFRequestToken"] = response.headers.get("XSRF-REQUEST-TOKEN");
+    //sessionStorage["XSRFRequestToken"] = response.headers.get("XSRF-REQUEST-TOKEN");
   }
   return response.body;
 }));
