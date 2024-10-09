@@ -15,11 +15,13 @@ export class SignUpComponent implements OnInit {
   countries:Country[] =[];
   constructor(private countriesService:CountriesService){
     this.signUpForm = new FormGroup({
-      firstName:new FormControl(null),
-      lastName:new FormControl(null),
+      personName:new FormGroup({
+        firstName:new FormControl(null),
+        lastName:new FormControl(null),
+      }),
       email:new FormControl(null),
       mobile:new FormControl(null),
-      dateOfBirt:new FormControl(null),
+      dateOfBirth:new FormControl(null),
       gender:new FormControl(null),
       countryID:new FormControl(null),
       receiveNewsLetters:new FormControl(null)
@@ -28,19 +30,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
 
     this.countries = this.countriesService.getCountries();
-    this.signUpForm = new FormGroup({
-     firstName:new FormControl(null),
-     lastName:new FormControl(null),
-     email:new FormControl(null),
-     mobile:new FormControl(null),
-     dateOfBirth:new FormControl(null),
-     gender:new FormControl(null),
-     countryID:new FormControl(null),
-     receiveNewsLetters:new FormControl(null)
-    });
-    this.signUpForm.valueChanges.subscribe((value:any)=>{
 
-    });
   }
   onSubmitClick()
   {
