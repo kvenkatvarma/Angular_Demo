@@ -78,7 +78,7 @@ export class ProjectsComponent implements OnInit
         this.newProject.projectID = 0;
         this.newProject.projectName = null;
         this.newProject.dateOfStart = null;
-        this.newProject.teamSize = null;
+        this.newProject.teamSize = 0;
         this.newProject.active = false;
         this.newProject.clientLocationID = null;
         this.newProject.status = null;
@@ -128,7 +128,7 @@ export class ProjectsComponent implements OnInit
         this.editProject.projectID = 0;
         this.editProject.projectName = null;
         this.editProject.dateOfStart = null;
-        this.editProject.teamSize = null;
+        this.editProject.teamSize = 0;
         this.newProject.active = false;
         this.newProject.clientLocationID = null;
         this.newProject.status = null;
@@ -159,7 +159,7 @@ export class ProjectsComponent implements OnInit
         this.projects.splice(this.deleteIndex, 1);
         this.deleteProject.projectID = 0;
         this.deleteProject.projectName = null;
-        this.deleteProject.teamSize = null;
+        this.deleteProject.teamSize = 0;
         this.deleteProject.dateOfStart = null;
       },
       (error) =>

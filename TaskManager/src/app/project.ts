@@ -5,7 +5,7 @@ export class Project
 projectID:number;
 projectName:any;
 dateOfStart:any;
-teamSize:any;
+teamSize:number;
 active:boolean | any;
 status: string | any;
 clientLocationID : number | any;

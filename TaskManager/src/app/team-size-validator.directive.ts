@@ -8,7 +8,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@an
 export class TeamSizeValidatorDirective implements Validator  {
 
   constructor() { }
-  @Input("appTeamSizeValidator")n:number=5;
+  @Input("appTeamSizeValidator")n:any=5;
 validate(control: AbstractControl): ValidationErrors | null {
   let currentValue = control.value;
   let isValid = currentValue % this.n == 0;

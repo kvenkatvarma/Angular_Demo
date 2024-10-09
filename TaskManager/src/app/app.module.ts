@@ -10,13 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { JwtInterceptorService } from './jwt-interceptor.service';
 import { JwtUnAuthorizedInterceptorService } from './jwt-un-authorized-interceptor.service';
 import { JwtModule } from '@auth0/angular-jwt';
-import { TeamSizeValidatorDirective } from './team-size-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    TeamSizeValidatorDirective
+    LoginComponent
   ],
   imports: [
     BrowserModule,
