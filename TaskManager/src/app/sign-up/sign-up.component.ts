@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
      lastName:new FormControl(null),
      email:new FormControl(null),
      mobile:new FormControl(null),
-     dateOfBirt:new FormControl(null),
+     dateOfBirth:new FormControl(null),
      gender:new FormControl(null),
      countryID:new FormControl(null),
      receiveNewsLetters:new FormControl(null)
@@ -41,5 +41,18 @@ export class SignUpComponent implements OnInit {
     this.signUpForm.valueChanges.subscribe((value:any)=>{
 
     });
+  }
+  onSubmitClick()
+  {
+   this.signUpForm.setValue({
+    firstName:"Venkat",
+    lastName:"Smith",
+    email:"abc@gmail.com",
+    mobile:"87878778",
+    gender:"male",
+    countryID:3,
+    receiveNewsLetters:true,
+    dateOfBirth:"2020-02-02"
+   })
   }
 }
