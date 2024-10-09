@@ -21,7 +21,8 @@ export class SignUpComponent implements OnInit {
       mobile:new FormControl(null),
       dateOfBirt:new FormControl(null),
       gender:new FormControl(null),
-      countryID:new FormControl(null)
+      countryID:new FormControl(null),
+      receiveNewsLetters:new FormControl(null)
      });
   }
   ngOnInit(): void {
@@ -34,7 +35,11 @@ export class SignUpComponent implements OnInit {
      mobile:new FormControl(null),
      dateOfBirt:new FormControl(null),
      gender:new FormControl(null),
-     countryID:new FormControl(null)
+     countryID:new FormControl(null),
+     receiveNewsLetters:new FormControl(null)
+    });
+    this.signUpForm.valueChanges.subscribe((value:any)=>{
+
     });
   }
 }
