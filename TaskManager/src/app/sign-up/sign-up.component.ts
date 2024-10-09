@@ -15,7 +15,8 @@ export class SignUpComponent implements OnInit {
       lastName:new FormControl(null),
       email:new FormControl(null),
       mobile:new FormControl(null),
-      dateOfBirt:new FormControl(null)
+      dateOfBirt:new FormControl(null),
+      gender:new FormControl(null)
      });
   }
   ngOnInit(): void {
@@ -24,8 +25,8 @@ export class SignUpComponent implements OnInit {
      lastName:new FormControl(null),
      email:new FormControl(null),
      mobile:new FormControl(null),
-     dateOfBirt:new FormControl(null)
-
+     dateOfBirt:new FormControl(null),
+     gender:new FormControl(null)
     });
   }
 }
