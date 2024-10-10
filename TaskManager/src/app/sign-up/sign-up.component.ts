@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit
   genders = ["male", "female"];
   countries: Country[] = []
 
-  constructor(private countriesService: CountriesService,private formBuilder:FormBuilder)
+  constructor(private countriesService: CountriesService, private formBuilder: FormBuilder)
   {
   }
 
@@ -24,15 +24,15 @@ export class SignUpComponent implements OnInit
 
     this.signUpForm = this.formBuilder.group({
       personName: this.formBuilder.group({
-        firstName: [null,[Validators.required,Validators.minLength(2)]],
-        lastName:  [null,[Validators.required,Validators.minLength(2)]],
+        firstName: [null, [Validators.required, Validators.minLength(2)]],
+        lastName: [null, [Validators.required, Validators.minLength(2)]],
       }),
 
-      email:  [null,[Validators.required,Validators.email]],
-      mobile: [null,[Validators.required,Validators.pattern(/^[789]\d{9}$/)]],
-      dateOfBirth:  [null,[Validators.required]],
-      gender: [null,[Validators.required]],
-      countryID:  [null,[Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      mobile: [null, [Validators.required, Validators.pattern(/^[789]\d{9}$/)]],
+      dateOfBirth: [null, [Validators.required]],
+      gender: [null, [Validators.required]],
+      countryID: [null, [Validators.required]],
       receiveNewsLetters: [null],
       skills: this.formBuilder.array([])
     });
@@ -46,7 +46,8 @@ export class SignUpComponent implements OnInit
   onSubmitClick()
   {
     //Display current form value
-    //console.log(this.signUpForm.value);
+    this.signUpForm["submitted"] = true;
+    console.log(this.signUpForm);
 
     //setValue
     // this.signUpForm.setValue({
@@ -68,21 +69,21 @@ export class SignUpComponent implements OnInit
     // });
 
     //reset
-    this.signUpForm.reset();
+    //this.signUpForm.reset();
 
     //reset with Parameters
-    this.signUpForm.reset({
-      firstName: "Adam",
-      lastName: "Smith",
-      email: "smith@gmail.com"
-    });
+    // this.signUpForm.reset({
+    //   firstName: "Adam",
+    //   lastName: "Smith",
+    //   email: "smith@gmail.com"
+    // });
   }
 
   onAddSkill()
   {
     var formGroup = new FormGroup({
-      skillName: new FormControl(null,[Validators.required]),
-      level: new FormControl(null,[Validators.required])
+      skillName: new FormControl(null, [Validators.required]),
+      level: new FormControl(null, [Validators.required])
     });
 
     (<FormArray>this.signUpForm.get("skills")).push(formGroup);
